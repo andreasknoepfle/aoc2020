@@ -13,6 +13,18 @@ defmodule Aoc do
     |> Aoc.PasswordPolicy.valid_count(type)
   end
 
+  def day(3, [type], %{"treemap" => treemap}) do
+    input = lines(treemap)
+
+    case type do
+      "slope" ->
+        Aoc.TobogganTrajectory.tree_count(input)
+
+      "slopes" ->
+        Aoc.TobogganTrajectory.tree_count(input, [{1, 1}, {3, 1}, {5, 1}, {7, 1}, {1, 2}])
+    end
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
