@@ -7,6 +7,12 @@ defmodule Aoc do
     |> Aoc.ExpenseReport.repair(String.to_integer(k))
   end
 
+  def day(2, [type], %{"passwords" => passwords}) do
+    passwords
+    |> lines()
+    |> Aoc.PasswordPolicy.valid_count(type)
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
