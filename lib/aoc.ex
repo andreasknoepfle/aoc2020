@@ -49,6 +49,18 @@ defmodule Aoc do
     |> Aoc.CustomCustoms.sum(method)
   end
 
+  def day(7, ["bags"], %{"bags" => bags}) do
+    bags
+    |> lines()
+    |> Aoc.HandyHaversacks.shiny_gold_bags()
+  end
+
+  def day(7, _, %{"bags" => bags}) do
+    bags
+    |> lines()
+    |> Aoc.HandyHaversacks.shiny_gold_options()
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
