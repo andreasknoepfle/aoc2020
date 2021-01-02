@@ -61,6 +61,18 @@ defmodule Aoc do
     |> Aoc.HandyHaversacks.shiny_gold_options()
   end
 
+  def day(8, ["fix"], %{"code" => instructions}) do
+    instructions
+    |> lines()
+    |> Aoc.HandheldHalting.accumulator_value()
+  end
+
+  def day(8, _, %{"code" => instructions}) do
+    instructions
+    |> lines()
+    |> Aoc.HandheldHalting.accumulator_error_value()
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
