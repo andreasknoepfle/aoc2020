@@ -25,6 +25,12 @@ defmodule Aoc do
     end
   end
 
+  def day(4, [strictness], %{"passports" => passports}) do
+    passports
+    |> Enum.join()
+    |> Aoc.PassportProcessing.valid_count(strictness)
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
