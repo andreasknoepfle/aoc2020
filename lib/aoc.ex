@@ -31,6 +31,18 @@ defmodule Aoc do
     |> Aoc.PassportProcessing.valid_count(strictness)
   end
 
+  def day(5, ["high"], %{"seats" => seats}) do
+    seats
+    |> lines()
+    |> Aoc.BinaryBoarding.highest_seat_id()
+  end
+
+  def day(5, ["my"], %{"seats" => seats}) do
+    seats
+    |> lines()
+    |> Aoc.BinaryBoarding.my_seat_id()
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
