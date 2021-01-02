@@ -43,6 +43,12 @@ defmodule Aoc do
     |> Aoc.BinaryBoarding.my_seat_id()
   end
 
+  def day(6, [method], %{"customs" => customs}) do
+    customs
+    |> Enum.join()
+    |> Aoc.CustomCustoms.sum(method)
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end

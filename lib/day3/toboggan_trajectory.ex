@@ -5,7 +5,7 @@ defmodule Aoc.TobogganTrajectory do
     |> Enum.reduce(&(&1 * &2))
   end
 
-  def tree_count(input, right \\ 3, down \\ 3) do
+  def tree_count(input, right \\ 3, down \\ 1) do
     input
     |> Enum.take_every(down)
     |> Enum.reduce({0, 0}, fn track, {index, trees} ->
