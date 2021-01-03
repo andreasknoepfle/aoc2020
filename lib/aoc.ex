@@ -73,6 +73,20 @@ defmodule Aoc do
     |> Aoc.HandheldHalting.accumulator_error_value()
   end
 
+  def day(9, ["weakness"], %{"xmas" => numbers}) do
+    numbers
+    |> lines()
+    |> as_numbers()
+    |> Aoc.EncodingError.encryption_weakness()
+  end
+
+  def day(9, _, %{"xmas" => numbers}) do
+    numbers
+    |> lines()
+    |> as_numbers()
+    |> Aoc.EncodingError.error_number()
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
