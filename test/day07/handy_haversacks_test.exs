@@ -26,13 +26,13 @@ defmodule Aoc.HandyHaversacksTest do
   """
 
   describe "shiny_gold_options/1" do
-	test "returns the number of bags that can contain shiny gold bags" do
+    test "returns the number of bags that can contain shiny gold bags" do
       assert shiny_gold_options(@input |> String.split("\n", trim: true)) == 4
     end
   end
 
   describe "shiny_gold_bags/1" do
-	test "counts the number of bags in the shiny gold bag" do
+    test "counts the number of bags in the shiny gold bag" do
       assert shiny_gold_bags(@input |> String.split("\n", trim: true)) == 32
       assert shiny_gold_bags(@count_input |> String.split("\n", trim: true)) == 126
     end

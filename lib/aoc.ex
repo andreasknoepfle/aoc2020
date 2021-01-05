@@ -87,6 +87,20 @@ defmodule Aoc do
     |> Aoc.EncodingError.error_number()
   end
 
+  def day(10, ["options"], %{"adapters" => adapters}) do
+    adapters
+    |> lines()
+    |> as_numbers()
+    |> Aoc.AdapterArray.options_count()
+  end
+
+  def day(10, _, %{"adapters" => adapters}) do
+    adapters
+    |> lines()
+    |> as_numbers()
+    |> Aoc.AdapterArray.result()
+  end
+
   defp lines(input) do
     Enum.map(input, &String.trim/1)
   end
